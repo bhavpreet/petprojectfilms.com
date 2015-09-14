@@ -91,7 +91,7 @@ if(mail($address, $e_subject, $msg, $headers)) {
 
 } else {
 
-	echo 'ERROR!';
+	echo 'Unable to send email! Please try again later.';
 
 }
 
