@@ -92,7 +92,7 @@ if($ret) {
 
 } else {
 
-	echo 'Unable to send email! Please try again later.' $ret;
+	echo 'Unable to send email! Please try again later.' + str($ret);
 
 }
 
