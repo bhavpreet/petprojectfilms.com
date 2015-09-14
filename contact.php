@@ -78,7 +78,8 @@ $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-if(mail($address, $e_subject, $msg, $headers)) {
+$ret = mail($address, $e_subject, $msg, $headers);
+if($ret) {
 
 	// Email has sent successfully, echo a success page.
 
@@ -91,7 +92,7 @@ if(mail($address, $e_subject, $msg, $headers)) {
 
 } else {
 
-	echo 'Unable to send email! Please try again later.';
+	echo 'Unable to send email! Please try again later.' $ret;
 
 }
 
