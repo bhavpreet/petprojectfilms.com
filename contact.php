@@ -59,7 +59,7 @@ $address = "info@petprojectfilms.com";
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
-$e_subject = 'You\'ve been contacted by ' . $name . '.';
+$e_subject = 'You have been contacted by ' . $name . '.';
 
 
 // Configuration option.
