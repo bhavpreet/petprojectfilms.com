@@ -55,7 +55,7 @@ $address = "info@petprojectfilms.com";
 
 
 // Configuration option.
-// i.e. The standard subject will appear as, "You've been contacted by John Doe."
+// i.e. The standard subject will appear as, "You have been contacted by John Doe."
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
@@ -79,7 +79,7 @@ $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 
-$command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $headers . '")\' > /dev/null 2>&1';
+$command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $headers . '");\' > /dev/null 2>&1';
 echo $command;
 //exec($command, $pid, $ret);
 exec ('/usr/bin/nohup touch /tmp/this-dosent-work >/dev/null 2>&1 &');
