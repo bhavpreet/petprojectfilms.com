@@ -70,7 +70,7 @@ $comments = str_replace('"', '\\"', $comments);
 $comments = str_replace('\'', '\\\'', $comments);
 
 $e_body = "You have been contacted by $name, the additional message is as follows." . PHP_EOL . PHP_EOL;
-$e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
+$e_content = "\\\"$comments\\\"" . PHP_EOL . PHP_EOL;
 $e_reply = "You can contact $name via email, $email or via phone $phone";
 
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
