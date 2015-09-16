@@ -66,13 +66,13 @@ $e_subject = 'You have been contacted by ' . $name . '.';
 // You can change this if you feel that you need to.
 // Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.
 
+$comments = str_replace('"', '\\"', $comments);
+$comments = str_replace('\'', '\\\'', $comments);
+
 $e_body = "You have been contacted by $name, the additional message is as follows." . PHP_EOL . PHP_EOL;
 $e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
 $e_reply = "You can contact $name via email, $email or via phone $phone";
 
-$comment = str_replace("'", "\'", $comment)
-$comment = str_replace('"', '\"', $comment)
-echo $comment
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
 $headers = "From: $email" . PHP_EOL;
@@ -81,10 +81,11 @@ $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-
 $command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $msg . '", "' . $headers . '");\' > /dev/null 2>&1 &';
 echo $command;
 exec($command, $pid, $ret);
+
+
 
 //$ret = mail($address, $e_subject, $msg, $headers);
 
