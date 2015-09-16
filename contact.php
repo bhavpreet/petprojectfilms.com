@@ -82,8 +82,15 @@ $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 $command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $msg . '", "' . $headers . '");\' > /dev/null 2>&1 &';
+
+$tmpfname = tempnam("/tmp", "mail");
+
+$handle = fopen($tmpfname, "w");
+fwrite($handle, $command);
+fclose($handle);
+
 echo $command;
-exec($command, $pid, $ret);
+exec('/bin/sh '. $tmpfname, $pid, $ret);
 
 
 
