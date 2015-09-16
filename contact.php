@@ -83,12 +83,6 @@ $command = '/usr/bin/php -r "mail(\"info@petprojectfilms.com\", \"test\", \"test
 echo $command
 //exec('nohup '.$command . '> /dev/null 2>&1');
 
-	echo "<fieldset>";
-	echo "<div id='success_page'>";
-	echo "<h4>Email Sent Successfully</h4>";
-	echo "<p>Thank you $name, your message has been submitted to us.</p>";
-	echo "</div>";
-	echo "</fieldset>";
 
 //$ret = mail($address, $e_subject, $msg, $headers);
 
