@@ -78,7 +78,7 @@ $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-$cmd = 'mail("'. $address . '","' . $e_subject . '","' . $msg . '","' . $headers . '");';
+$cmd = 'mail(\"'. $address . '\",\"' . $e_subject . '\",\"' . $msg . '\",\"' . $headers . '\");';
 echo 'nohup /usr/bin/php -r "' . $cmd . '"' > /dev/null 2>&1 &'
 //exec('nohup /usr/bin/php -r \'' . $cmd . '\'' > /dev/null 2>&1 &');
 
