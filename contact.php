@@ -80,7 +80,7 @@ $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 
 $command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $headers . '")\' > /dev/null 2>&1';
-echo $command
+echo $command;
 exec($command);
 
 
