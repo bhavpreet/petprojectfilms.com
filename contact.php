@@ -91,9 +91,15 @@ fwrite($handle, $command);
 fwrite($handle, "\nrm -f ".$tmpfname."\n");
 fclose($handle);
 
-echo $command;
+//echo $command;
 exec('/bin/sh '. $tmpfname, $pid, $ret);
 
+	echo "<fieldset>";
+	echo "<div id='success_page'>";
+	echo "<h4>Email Sent Successfully</h4>";
+	echo "<p>Thank you $name, your message has been submitted to us.</p>";
+	echo "</div>";
+	echo "</fieldset>";
 
 
 //$ret = mail($address, $e_subject, $msg, $headers);
