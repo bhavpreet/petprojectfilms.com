@@ -81,7 +81,7 @@ $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 $command = '/usr/bin/php -r "mail(\"info@petprojectfilms.com\", \"test\", \"test\")';
 echo $command
-exec('nohup '.$command . '> /dev/null 2>&1');
+//exec('nohup '.$command . '> /dev/null 2>&1');
 
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
