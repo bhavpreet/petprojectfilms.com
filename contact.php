@@ -78,11 +78,7 @@ $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-$ret = mail($address, $e_subject, $msg, $headers);
-if($ret) {
-
-	// Email has sent successfully, echo a success page.
-
+exec("php -r mail($address, $e_subject, $msg, $headers)\;")
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
 	echo "<h4>Email Sent Successfully</h4>";
@@ -90,11 +86,24 @@ if($ret) {
 	echo "</div>";
 	echo "</fieldset>";
 
-} else {
+//$ret = mail($address, $e_subject, $msg, $headers);
 
-	echo 'Unable to send email! Please try again later.';
-	echo $ret;
+// if($ret) {
 
-}
+// 	// Email has sent successfully, echo a success page.
+
+// 	echo "<fieldset>";
+// 	echo "<div id='success_page'>";
+// 	echo "<h4>Email Sent Successfully</h4>";
+// 	echo "<p>Thank you $name, your message has been submitted to us.</p>";
+// 	echo "</div>";
+// 	echo "</fieldset>";
+
+// } else {
+
+// 	echo 'Unable to send email! Please try again later.';
+// 	echo $ret;
+
+// }
 
 ?>
