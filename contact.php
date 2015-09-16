@@ -88,7 +88,7 @@ $tmpfname = tempnam("/tmp", "mail");
 
 $handle = fopen($tmpfname, "w");
 fwrite($handle, $command);
-fwrite($handle, "\necho ".$tmpfname);
+fwrite($handle, "\nrm -f ".$tmpfname."\n");
 fclose($handle);
 
 echo $command;
