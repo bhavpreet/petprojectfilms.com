@@ -81,7 +81,7 @@ $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 $command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $headers . '")\' > /dev/null 2>&1';
 echo $command
-//exec('nohup ' .$command . '> /dev/null 2>&1');
+exec($command);
 
 
 //$ret = mail($address, $e_subject, $msg, $headers);
