@@ -79,8 +79,8 @@ $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 
-$command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $headers . '");\' > /dev/null 2>&1 &';
-echo $command;
+$command = '/usr/bin/nohup /usr/bin/php -r \'mail("'.$address .'", "' . $e_subject . '", "' . $msg . '", "' . $headers . '");\' > /dev/null 2>&1 &';
+//echo $command;
 exec($command, $pid, $ret);
 
 //$ret = mail($address, $e_subject, $msg, $headers);
