@@ -80,7 +80,7 @@ $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 $cmd = 'mail("'. $address . '","' . $e_subject . '","' . $msg . '","' . $headers . '");';
 echo 'nohup /usr/bin/php -r "' . $cmd . '"' > /dev/null 2>&1 &'
-#exec('nohup /usr/bin/php -r \'' . $cmd . '\'' > /dev/null 2>&1 &');
+//exec('nohup /usr/bin/php -r \'' . $cmd . '\'' > /dev/null 2>&1 &');
 
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
