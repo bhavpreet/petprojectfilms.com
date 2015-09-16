@@ -79,7 +79,7 @@ $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 
-$command = '/usr/bin/php -r "mail(\"info@petprojectfilms.com\", \"test\", \"test\")';
+$command = '/usr/bin/php -r "mail(\"'.$address .'\", \"test\", \"test\")';
 echo $command
 //exec('nohup '.$command . '> /dev/null 2>&1');
 
