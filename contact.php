@@ -67,7 +67,8 @@ $e_subject = 'You have been contacted by ' . $name . '.';
 // Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.
 
 $comments = str_replace('"', '\\"', $comments);
-$comments = str_replace('\'', '\\\'', $comments);
+$comments = str_replace('\'', '`', $comments);
+$comments = str_replace('\$', '\\$', $comments);
 
 $e_body = "You have been contacted by $name, the additional message is as follows." . PHP_EOL . PHP_EOL;
 $e_content = "\\\"$comments\\\"" . PHP_EOL . PHP_EOL;
